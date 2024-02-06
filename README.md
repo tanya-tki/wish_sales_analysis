@@ -11,7 +11,7 @@ The case study follows these steps of data analysis process:
 
 ### [1. Ask](/README.md#4-analyze)
 ### [2. Prepare](/README.md#2---prepare)
-### [3. Process](/README.md#2---process)
+### [3. Process](/README.md#3process)
 ### [4. Analyze](/README.md#2---analyze)
 ### [5. Share](/README.md#2---prepare)
 ### [6. Act](/README.md#2---prepare)
