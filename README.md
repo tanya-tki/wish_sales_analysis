@@ -181,7 +181,7 @@ Since UPDATE function cannot be used in BigQuery. I decided to correct data inco
 
 ## 4.	Analyze and Share
 In this project, I've chosen to combine the steps of analysis and sharing. This is because I think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
-4.1 Customer Preference Data Analysis
+### 4.1 Customer Preference Data Analysis
 This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights. These are the steps of product color analysis: 
 4.1.1 Extracted all columns that will be used in product variation analysis by using SQL.
 ```
@@ -199,4 +199,22 @@ ORDER BY
 ```
 4.2.2 Created a graph by using Tableau to see if there are any correlations between product color, unit sold and average rating.
 
+<img width="700" alt="Screenshot 2567-01-28 at 11 09 48" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/31becc66-4c41-45c3-8226-1613893e4a90">
+
+From the first graph, "Product Color vs Unit Sold vs Avg. Rating":
+* Black products have the highest number of units sold, followed by white, blue, and green products.
+* The average rating (blue line) fluctuates around 4 out of 5 across different product colors, suggesting that customers are generally satisfied with their purchases irrespective of color.
+* The average rating does not appear to have a direct correlation with the number of units sold, as some less-sold colors still maintain a high rating.
+<br>In the second graph, "Product Color vs Units Sold vs Product Count":
+* Again, black products lead in product count, followed by white, blue, green and red products.
+<br>**Key insights:**
+* Black is the most popular product color in terms of sales, substantially outselling other colors. 
+* There is a consistent level of customer satisfaction across product colors, as indicated by the average rating. 
+* There is no direct correlation between units sold and customer rating.
+<br>**Strategic Implications:**
+* Interestingly, white and blue are the second most popular colors. If we can look at another dataset in different keywords (e.g., winter, spring, etc.), we might get a different color preference result. We can apply this data to how we advertise on the main page of the website to attract customer attention.
+### 4.2	Price Analysis
+#### 4.2.1 Average Units Sold and Ratings by Price Range Analysis
+The objective of "Average Units Sold and Ratings by Price Range Analysis" is to understand how pricing affects sales volume and customer satisfaction, which can help inform better pricing and marketing strategies.
+* Extracted all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’,’5-10’,’10-15’,’15-20’,’20-25’, and ’25-30’).
 
