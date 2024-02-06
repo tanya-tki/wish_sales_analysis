@@ -62,10 +62,10 @@ ORDER BY ordinal_position;
 ```
 
 Belows are **summer_products_with_rating_and_performance** dataset column names:
-
+```
 column names = [‘title_orig, price, retail_price, currency_buyer, units_sold, uses_ad_boosts, rating, rating_count, rating_five_count, rating_four_count, rating_three_count, rating_two_count, rating_one_count, tags, product_color
 product_variation_size_id, product_variation_inventory, shipping_option_name, shipping_option_price, shipping_is_express, countries_shipped_to, inventory_total, has_urgency_banner, urgency_text, origin_country, merchant_title, merchant_name, merchant_info_subtitle, merchant_rating_count, merchant_rating, merchant_id, merchant_has_profile_picture, merchant_profile_picture, product_id, theme, crawl_month’]
-
+```
 **summer_products_with_rating_and_performance dataset** has **36 columns** and **1,573 rows in total.**
 
 #### Strategic Analysis Planning: 
