@@ -9,7 +9,7 @@ For this project, I will use SQL BigQuery and Excel to organize the data and mak
 
 The case study follows these steps of data analysis process:
 
-### [1. Ask](/tanya-tki/wish_sales_analysis/edit/main/README.md#4-analyze)
+### [1. Ask](/README.md#4-analyze)
 ### [2. Prepare]
 ### [3. Process]
 ### [4. Analyze]
