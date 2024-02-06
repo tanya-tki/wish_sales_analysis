@@ -10,7 +10,7 @@ For this project, I will use SQL BigQuery and Excel to organize the data and mak
 The case study follows these steps of data analysis process:
 
 ### [1. Ask](/README.md#4-analyze)
-### [2. Prepare]
+### [2. Prepare](/README.md#2---prepare)
 ### [3. Process]
 ### [4. Analyze]
 ### [5. Share]
