@@ -1,4 +1,5 @@
 # Analysis of Wish's Summer Clothes Sales Performance
+By Tanyaluck Kanai
 
 ## Introduction
 Welcome to my project, where we look closely at summer clothes products from Wish, a popular online shopping site. Wish is where you can find almost anything at a good price. The way Wish shows shoppers different products is interesting, and that's why we're looking at their data.
@@ -7,14 +8,13 @@ This project isn't just about Wish. I believe doing this project can help us lea
 
 For this project, I will use SQL BigQuery and Excel to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
 
-The case study follows these steps of data analysis process:
-
-### [1. Ask](/README.md#4-analyze)
-### [2. Prepare](/README.md#2---prepare)
-### [3. Process](/README.md#3process)
-### [4. Analyze](/README.md#2---analyze)
-### [5. Share](/README.md#2---prepare)
-### [6. Act](/README.md#2---prepare)
+The project follows these steps of data analysis process:
+ <br> [1. Ask](/README.md#4-analyze)
+  <br>[2. Prepare](/README.md#2---prepare)
+  <br>[3. Process](/README.md#3process)
+ <br> [4. Analyze](/README.md#2---analyze)
+  <br>[5. Share](/README.md#2---prepare)
+ <br> [6. Act](/README.md#2---prepare)
 
 ## 1.	Ask
 
@@ -59,7 +59,6 @@ SELECT column_name
 FROM `project.wish_sales_datasets.INFORMATION_SCHEMA.COLUMNS`
 WHERE table_name = ‘summer_products_with_rating_and_performance’
 ORDER BY ordinal_position;
-
 ```
 
 Belows are **summer_products_with_rating_and_performance** dataset column names:
