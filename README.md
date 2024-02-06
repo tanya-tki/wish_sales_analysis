@@ -7,8 +7,14 @@ This project isn't just about Wish. I believe doing this project can help us lea
 
 For this project, I will use SQL BigQuery and Excel to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
 
-These are the steps I will be using in this data analysis project:
-<br>**Data Analysis Process: ask, prepare, process, analyze, share, and act.**
+The case study follows these steps of data analysis process:
+
+### [1. Ask]
+### [2. Prepare]
+### [3. Process]
+### [4. Analyze]
+### [5. Share]
+### [6. Act]
 
 ## 1.	Ask
 
@@ -47,3 +53,37 @@ There is no explicit indication of the source or method of data collection for t
 ### 3.2 Initial Data Overview
 #### Column Names and Row Count: 
 Begin by identifying the column names and the total number of rows in the dataset. This initial step is essential for understanding the scope and scale of the data.
+
+Belows are **summer_products_with_rating_and_performance** dataset column names:
+
+column names = [‘title_orig, price, retail_price, currency_buyer, units_sold, uses_ad_boosts, rating, rating_count, rating_five_count, rating_four_count, rating_three_count, rating_two_count, rating_one_count, tags, product_color
+product_variation_size_id, product_variation_inventory, shipping_option_name, shipping_option_price, shipping_is_express, countries_shipped_to, inventory_total, has_urgency_banner, urgency_text, origin_country, merchant_title, merchant_name, merchant_info_subtitle, merchant_rating_count, merchant_rating, merchant_id, merchant_has_profile_picture, merchant_profile_picture, product_id, theme, crawl_month’]
+
+**summer_products_with_rating_and_performance dataset** has **36 columns** and **1,573 rows in total.**
+
+#### Strategic Analysis Planning: 
+Based on the dataset's structure and the information each column provides, I can plan out an analysis strategy. This will include deciding which columns are relevant to my questions and what kind of insights I can derive from them.
+
+Below are some of the analysis ideas that I can think of after looking at the obtained column names and number of rows:
+
+ 1.	Customer Preference Insights:
+<br>o	Understand customer preferences based on product ratings (different rating counts) and the types of products sold (product_color, product_variation_size_id).
+ 2.	Price Analysis:
+<br>o	Evaluate how price affects units sold and ratings.
+<br>o	Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
+ 3.	Product Performance Analysis:
+<br>o	Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
+
+### 3.3 Let’s clean the data
+3.3.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
+
+```
+git status
+git add
+git commit
+```
+
+- summer_products_with_rating_and_performance dataset has 34 duplicate values and has been removed; 1539 unique values remain. 
+- product_id column found 198 duplicate values and has been removed; 1,341 unique values remain in total.
+
+3.3.2	Check for ‘NULL’ value in all datasets by using this code.
