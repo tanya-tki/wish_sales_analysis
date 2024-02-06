@@ -36,8 +36,8 @@ The data we're using shows us a list of products that come up when you search fo
 
 ### 2.2 Data Organization 
 The data consists of 2 datasets. All the datasets are in .csv file format and include long and wide formats.
-    •	computed_insight_success_of_active_sellers
-    •	summer_products_with_rating_and_performance
+  *	computed_insight_success_of_active_sellers
+  *	summer_products_with_rating_and_performance
 
 ### 2.3 Data Limitations & Integrity 
 #### 2.3.1 	Outdated Data
@@ -74,25 +74,79 @@ Based on the dataset's structure and the information each column provides, I can
 Below are some of the analysis ideas that I can think of after looking at the obtained column names and number of rows:
 
  1.	Customer Preference Insights:
-<br>o	Understand customer preferences based on product ratings (different rating counts) and the types of products sold (product_color, product_variation_size_id).
+*	Understand customer preferences based on product ratings (different rating counts) and the types of products sold (product_color, product_variation_size_id).
  2.	Price Analysis:
-<br>o	Evaluate how price affects units sold and ratings.
-<br>o	Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
+*	Evaluate how price affects units sold and ratings.
+*	Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
  3.	Product Performance Analysis:
-<br>o	Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
+*	Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
 
 ### 3.3 Let’s clean the data
 3.3.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
+* summer_products_with_rating_and_performance dataset has 34 duplicate values and has been removed; 1539 unique values remain. 
+* product_id column found 198 duplicate values and has been removed; 1,341 unique values remain in total.
 
+3.3.2	Check for ‘NULL’ value in all datasets.
 ```
-SELECT column_name
-FROM `project.wish_sales_datasets.INFORMATION_SCHEMA.COLUMNS`
-WHERE table_name = ‘summer_products_with_rating_and_performance’
-ORDER BY ordinal_position;
-
+SELECT 
+COUNT(CASE WHEN title_orig IS NULL THEN 1 END) AS title_orig_nulls,
+  	COUNT(CASE WHEN price IS NULL THEN 1 END) AS price_nulls,
+ 	 	.
+.
+.
+  	COUNT(CASE WHEN theme IS NULL THEN 1 END) AS theme_nulls,
+  	COUNT(CASE WHEN crawl_month IS NULL THEN 1 END) AS crawl_month_nulls
+FROM project.wish_sales_datasets.summer_product_rating_and_performance
 ```
+Note: If we use Python, the code will be much shorter. We can write a Python code as below:
+```
+null_counts_tablename = df_tablename.isnull().sum()
+```
+There are results I found from checking NULL values:
+```
+title_orig_nulls	0
+price_nulls	0
+retail_price_nulls	0
+currency_buyer_nulls	0
+units_sold_nulls	0
+uses_ad_boosts_nulls	0
+rating_nulls	0
+rating_count_nulls	0
+rating_five_count_nulls	45
+rating_four_count_nulls	45
+rating_three_count_nulls	45
+rating_two_count_nulls	45
+rating_one_count_nulls	45
+tags_nulls	0
+product_color_nulls	41
+product_variation_size_id_nulls	13
+product_variation_inventory_nulls	0
+shipping_option_name_nulls	0
+shipping_option_price_nulls	0
+shipping_is_express_nulls	0
+countries_shipped_to_nulls	0
+inventory_total_nulls	0
+has_urgency_banner_nulls	1100
+urgency_text_nulls	1100
+origin_country_nulls	16
+merchant_title_nulls	0
+merchant_name_nulls	2
+merchant_info_subtitle_nulls	1
+merchant_rating_count_nulls	0
+merchant_rating_nulls	0
+merchant_id_nulls	0
+merchant_has_profile_picture_nulls	0
+merchant_profile_picture_nulls	1138
+product_id_nulls	0
+theme_nulls	0
+crawl_month_nulls	0
+```
+What can we interpret from these data:
+1.	Columns with No NULLS:
+•	Many columns, such as title_orig, price, retail_price, and others, have zero null values. This suggests that these fields are consistently populated across dataset.
+2.	Columns with NULLS:
+•	Some products in columns product_color (41 nulls) and product_variation_size_id (14 nulls) might have no product variation. I will replace null value in product_color to no color variation.
+•	The columns rating_five_count, rating_four_count, rating_three_count, rating_two_count, and rating_one_count each have 45 nulls. There might be products without any ratings, or these ratings are not captured consistently. I will replace the null values with zeros.
+•	has_urgency_banner and urgency_text columns have 1100 nulls, indicating that most products in the dataset do not have an urgency banner. I will replace the null values with zeros.
+•	merchant_profile_picture has 1138 nulls, suggesting that for many merchants, the profile picture data is missing.
 
-- summer_products_with_rating_and_performance dataset has 34 duplicate values and has been removed; 1539 unique values remain. 
-- product_id column found 198 duplicate values and has been removed; 1,341 unique values remain in total.
-
-3.3.2	Check for ‘NULL’ value in all datasets by using this code.
