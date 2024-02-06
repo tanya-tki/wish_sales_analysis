@@ -9,7 +9,7 @@ This project isn't just about Wish. I believe doing this project can help us lea
 For this project, I will use SQL BigQuery and Excel to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
 
 The project follows these steps of data analysis process:
- <br> [1. Ask](/README.md#4-analyze)
+ <br> [1. Ask](/README.md#1ask)
   <br>[2. Prepare](/README.md#2---prepare)
   <br>[3. Process](/README.md#3process)
  <br> [4. Analyze](/README.md#2---analyze)
