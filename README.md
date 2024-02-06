@@ -9,7 +9,7 @@ For this project, I will use SQL BigQuery and Excel to organize the data and mak
 
 The case study follows these steps of data analysis process:
 
-### [1. Ask]
+### [1. Ask](/tanya-tki/wish_sales_analysis/edit/main/README.md#4-analyze)
 ### [2. Prepare]
 ### [3. Process]
 ### [4. Analyze]
@@ -54,6 +54,14 @@ There is no explicit indication of the source or method of data collection for t
 #### Column Names and Row Count: 
 Begin by identifying the column names and the total number of rows in the dataset. This initial step is essential for understanding the scope and scale of the data.
 
+```
+SELECT column_name
+FROM `project.wish_sales_datasets.INFORMATION_SCHEMA.COLUMNS`
+WHERE table_name = ‘summer_products_with_rating_and_performance’
+ORDER BY ordinal_position;
+
+```
+
 Belows are **summer_products_with_rating_and_performance** dataset column names:
 
 column names = [‘title_orig, price, retail_price, currency_buyer, units_sold, uses_ad_boosts, rating, rating_count, rating_five_count, rating_four_count, rating_three_count, rating_two_count, rating_one_count, tags, product_color
@@ -78,9 +86,11 @@ Below are some of the analysis ideas that I can think of after looking at the ob
 3.3.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
 
 ```
-git status
-git add
-git commit
+SELECT column_name
+FROM `project.wish_sales_datasets.INFORMATION_SCHEMA.COLUMNS`
+WHERE table_name = ‘summer_products_with_rating_and_performance’
+ORDER BY ordinal_position;
+
 ```
 
 - summer_products_with_rating_and_performance dataset has 34 duplicate values and has been removed; 1539 unique values remain. 
