@@ -178,7 +178,8 @@ Since UPDATE function cannot be used in BigQuery. I decided to correct data inco
 *	Convert all text to lowercase.
 *	Map similar colors to a standard color name (e.g., "light blue" "navy blue" “lake blue” “sky blue” to "blue"). Map the same category size description into the same group (e.g., “SIZE S” to “s”)
 
-4.	Analyze and Share
+
+## 4.	Analyze and Share
 In this project, I've chosen to combine the steps of analysis and sharing. This is because I think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
 4.1 Customer Preference Data Analysis
 This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights. These are the steps of product color analysis: 
