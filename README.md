@@ -11,7 +11,7 @@ The case study follows these steps of data analysis process:
 
 ### [1. Ask](/README.md#4-analyze)
 ### [2. Prepare](/README.md#2---prepare)
-### [3. Process](/README.md#2---prepare)
+### [3. Process](/README.md#2---process)
 ### [4. Analyze](/README.md#2---analyze)
 ### [5. Share](/README.md#2---prepare)
 ### [6. Act](/README.md#2---prepare)
@@ -47,7 +47,7 @@ The summer_products_with_rating_and_performance.csv dataset might not represent 
 #### 2.3.3 	Accuracy and Reliability
 There is no explicit indication of the source or method of data collection for these datasets, which raises questions about their accuracy and reliability. Any errors in data collection or recording would directly impact the analysis.
 
-## 3.	Analyze
+## 3.	Process
 
 ### 3.1 Import CSV Files into a SQL Database
 ### 3.2 Initial Data Overview
