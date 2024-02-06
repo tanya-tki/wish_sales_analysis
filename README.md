@@ -104,49 +104,98 @@ null_counts_tablename = df_tablename.isnull().sum()
 ```
 There are results I found from checking NULL values:
 ```
-title_orig_nulls	0
-price_nulls	0
-retail_price_nulls	0
+title_orig_nulls	    0
+price_nulls	         0
+retail_price_nulls	  0
 currency_buyer_nulls	0
-units_sold_nulls	0
+units_sold_nulls	    0
 uses_ad_boosts_nulls	0
-rating_nulls	0
-rating_count_nulls	0
-rating_five_count_nulls	45
-rating_four_count_nulls	45
-rating_three_count_nulls	45
-rating_two_count_nulls	45
-rating_one_count_nulls	45
-tags_nulls	0
-product_color_nulls	41
-product_variation_size_id_nulls	13
-product_variation_inventory_nulls	0
-shipping_option_name_nulls	0
-shipping_option_price_nulls	0
-shipping_is_express_nulls	0
-countries_shipped_to_nulls	0
-inventory_total_nulls	0
-has_urgency_banner_nulls	1100
-urgency_text_nulls	1100
-origin_country_nulls	16
-merchant_title_nulls	0
-merchant_name_nulls	2
+rating_nulls	        0
+rating_count_nulls	  0
+rating_five_count_nulls	   45
+rating_four_count_nulls	   45
+rating_three_count_nulls	  45
+rating_two_count_nulls	    45
+rating_one_count_nulls	    45
+tags_nulls	          0
+product_color_nulls	       41
+product_variation_size_id_nulls	   13
+product_variation_inventory_nulls	 0
+shipping_option_name_nulls	  0
+shipping_option_price_nulls	 0
+shipping_is_express_nulls	   0
+countries_shipped_to_nulls	  0
+inventory_total_nulls       	0
+has_urgency_banner_nulls	    1100
+urgency_text_nulls	          1100
+origin_country_nulls	        16
+merchant_title_nulls	        0
+merchant_name_nulls	         2
 merchant_info_subtitle_nulls	1
-merchant_rating_count_nulls	0
-merchant_rating_nulls	0
-merchant_id_nulls	0
+merchant_rating_count_nulls	 0
+merchant_rating_nulls	       0
+merchant_id_nulls	           0
 merchant_has_profile_picture_nulls	0
-merchant_profile_picture_nulls	1138
-product_id_nulls	0
-theme_nulls	0
-crawl_month_nulls	0
+merchant_profile_picture_nulls	    1138
+product_id_nulls	            0
+theme_nulls	                 0
+crawl_month_nulls	           0
 ```
 What can we interpret from these data:
 1.	Columns with No NULLS:
-•	Many columns, such as title_orig, price, retail_price, and others, have zero null values. This suggests that these fields are consistently populated across dataset.
+*	Many columns, such as title_orig, price, retail_price, and others, have zero null values. This suggests that these fields are consistently populated across dataset.
 2.	Columns with NULLS:
-•	Some products in columns product_color (41 nulls) and product_variation_size_id (14 nulls) might have no product variation. I will replace null value in product_color to no color variation.
-•	The columns rating_five_count, rating_four_count, rating_three_count, rating_two_count, and rating_one_count each have 45 nulls. There might be products without any ratings, or these ratings are not captured consistently. I will replace the null values with zeros.
-•	has_urgency_banner and urgency_text columns have 1100 nulls, indicating that most products in the dataset do not have an urgency banner. I will replace the null values with zeros.
-•	merchant_profile_picture has 1138 nulls, suggesting that for many merchants, the profile picture data is missing.
+*	Some products in columns product_color (41 nulls) and product_variation_size_id (14 nulls) might have no product variation. I will replace null value in product_color to no color variation.
+*	The columns rating_five_count, rating_four_count, rating_three_count, rating_two_count, and rating_one_count each have 45 nulls. There might be products without any ratings, or these ratings are not captured consistently. I will replace the null values with zeros.
+*	has_urgency_banner and urgency_text columns have 1100 nulls, indicating that most products in the dataset do not have an urgency banner. I will replace the null values with zeros.
+*	merchant_profile_picture has 1138 nulls, suggesting that for many merchants, the profile picture data is missing.
+
+3.3.3	Replaced NULL values with zero
+Since the free trial version of Bigquery doesn’t allow SET and UPDATE functions which can modify the data directly, I had to find another way by creating a new table instead.
+```
+CREATE TABLE project.wish_sales_datasets.summer_product_rating_and_performance01 AS 
+SELECT 
+  title_orig,
+  	.
+.
+  COALESCE(rating_five_count, 0) AS rating_five_count,
+  COALESCE(rating_four_count, 0) AS rating_four_count,
+  COALESCE(rating_three_count, 0) AS rating_three_count,
+  COALESCE(rating_two_count, 0) AS rating_two_count,
+  COALESCE(rating_one_count, 0) AS rating_one_count,
+  	.
+.
+  COALESCE(has_urgency_banner, 0) AS has_urgency_banner,
+  COALESCE(urgency_text, '0') AS urgency_text,
+	.
+	.  
+  crawl_month  
+FROM project.wish_sales_datasets.summer_product_rating_and_performance;
+```
+3.3.4	Checked for data inconsistency in product_color and product_variation_size_id
+*	Run a query to list all distinct values in the product_color and product_variation_size_id columns. 
+Since UPDATE function cannot be used in BigQuery. I decided to correct data inconsistency in Excel.
+*	Convert all text to lowercase.
+*	Map similar colors to a standard color name (e.g., "light blue" "navy blue" “lake blue” “sky blue” to "blue"). Map the same category size description into the same group (e.g., “SIZE S” to “s”)
+
+4.	Analyze and Share
+In this project, I've chosen to combine the steps of analysis and sharing. This is because I think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
+4.1 Customer Preference Data Analysis
+This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights. These are the steps of product color analysis: 
+4.1.1 Extracted all columns that will be used in product variation analysis by using SQL.
+```
+SELECT 
+    product_color,
+    SUM(units_sold) AS units_sold,
+    AVG(rating) AS average_rating,
+    COUNT(*) AS product_count
+FROM 
+    project.wish_sales_datasets.summer_products_with_rating_and_performance
+GROUP BY 
+    product_color
+ORDER BY 
+    units_sold DESC, average_rating DESC;
+```
+4.2.2 Created a graph by using Tableau to see if there are any correlations between product color, unit sold and average rating.
+
 
