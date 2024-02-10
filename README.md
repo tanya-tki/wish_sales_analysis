@@ -259,5 +259,69 @@ What we can interpret from the graph:
 * The platform might consider implementing measures to enhance the reliability of product ratings, such as verifying purchases or encouraging more comprehensive reviews, thereby aiding customers in making more informed decisions.
 <br><br>In summary, while there is valuable data to be gleaned from sales and rating trends across different price ranges, it's crucial to approach this information with a discerning eye, particularly when considering the impact of potential pricing strategies and the authenticity of customer reviews.
 
+#### 4.2.2	Discount Sensitivity and Sales Impact Analysis
+The objective of this analysis is to understand consumer sensitivity to price drops by analyzing how discounted prices affect units sold and product ratings.
+* Calculated the discount percentage for each product using the formula:
+(retail_price−price)/retail_price
+* Divided the data into segments based on the discount percentage. I decided to 10 percentage increment brackets like 0-10%, 11-20%, and so on.
+* For each discount segment, calculate the average units sold and the average rating.
+
+```
+  SELECT
+  CASE
+        WHEN ROUND(discount_percentage,2)  < 0.01 THEN 'no discount'
+        WHEN ROUND(discount_percentage,2)  BETWEEN 0.01 AND 0.09 THEN '0-10%'
+        WHEN ROUND(discount_percentage,2)  BETWEEN 0.1 AND 0.19 THEN '10-20%'
+        WHEN ROUND(discount_percentage,2)  BETWEEN 0.2 AND 0.29 THEN '20-30%'
+        WHEN ROUND(discount_percentage,2)  BETWEEN 0.3 AND 0.39 THEN '30-40%'
+        WHEN ROUND(discount_percentage,2) BETWEEN 0.4 AND 0.49 THEN '40-50%'
+        WHEN ROUND(discount_percentage,2) BETWEEN 0.5 AND 0.59 THEN '50-60%'
+        WHEN ROUND(discount_percentage,2) BETWEEN 0.6 AND 0.69 THEN '60-70%'
+        WHEN ROUND(discount_percentage,2) BETWEEN 0.7 AND 0.79 THEN '70-80%'
+        ELSE 'more than 80%'
+    END AS discount_percentage_range,
+  AVG(units_sold) AS avg_units_sold,
+  AVG(rating) AS avg_rating
+FROM(
+  SELECT
+  product_id,
+  retail_price,
+  price,
+  units_sold,
+  rating,
+  (retail_price - price) / retail_price AS discount_percentage, 
+  (retail_price - price) AS discount_amount 
+FROM polar-ring-331017.wish_sales_datasets.summer_products_with_rating_and_performance
+) AS discounted_product
+GROUP BY discount_percentage_range
+ORDER BY discount_percentage_range;
+```
+
+The data below is the result of the sub-query. Interestingly, some products were set to sell higher at retail prices. Perhaps, some merchants are misunderstood? 
+<img width="1076" alt="Screenshot 2567-01-28 at 14 57 03" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/a22d0c78-33f2-4f37-b0e9-fb2a018c3afd">
+
+
+
+<img width="747" alt="Screenshot 2567-01-28 at 16 00 36" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/d0b34c1d-7bfe-4682-a7e3-7cd8d8111330">
+
+What we can interpret from the graph:
+1. Peak at No Discount and Deep Discounts: The graph shows high average units sold for products with no discount and for those with substantial discounts, particularly in the 30-40% range and more than 80% range.
+2. Dip in Moderate Discounts: There's a noticeable dip in the average units sold for products with moderate discounts, especially in the 10-20% range.
+3. Rating Stability: The average rating line remains relatively stable across all discount ranges, suggesting that the level of discount does not significantly affect customer satisfaction as reflected in product ratings.
+Insights:
+* Price Sensitivity Over Discount Sensitivity: The strong performance of non-discounted products suggests that consumers may be more sensitive to the absolute price rather than the discount itself. It's possible that products without discounts are already priced attractively enough to encourage purchases. This could be particularly true on a platform like Wish, where consumers are often looking for low-cost items.
+* Effect of Large Discounts: The substantial increase in units sold at higher discount brackets may be due to the psychological effect where customers perceive they are getting a significant deal, which could trigger a sense of urgency to purchase.
+Strategic Implications:
+* Targeted Discounting: Since moderate discounts don't significantly boost sales, it may be more strategic to offer significant discounts selectively, ensuring they align with inventory goals, such as stock clearance.
+* Profit Margin Balance: Given that deep discounts increase sales, it's important to balance these with profitability considerations to ensure overall business objectives are met.
+* Avoiding Overuse of Discounts: Frequent large discounts could potentially condition customers to wait for sales, which could hurt the perceived value of the products and impact regular-priced sales negatively.
+<br>
+1.	Customer Segmentation: Segment customers based on their sensitivity to price versus discounts. Tailor the shopping experience to these segments, showing the most price-sensitive customers the lowest-priced items and discount-seekers the best deals.
+Price strategy: I would recommend the website to take a closer look at price.
+1.	Pricing Analysis: Wish could conduct a thorough analysis of the absolute prices of products that sell well without discounts. Understanding this could inform pricing strategies that align with customer expectations and willingness to pay.
+2.	Dynamic Pricing Models: Implement dynamic pricing models that respond to real-time demand and inventory levels. By optimizing prices based on consumer behavior data, Wish can maximize profits while maintaining competitive prices.
+3.	Discount Optimization: Instead of across-the-board discounts, Wish might find it more beneficial to offer targeted discounts on specific products that don't sell as well at their original price point, potentially clearing inventory without eroding the perceived value of their overall product line.
+4.	Marketing Focus on Price: Marketing campaigns could focus on the competitive pricing of products, highlighting value for money and affordability as key selling points, rather than emphasizing discounts.
+
 
 
