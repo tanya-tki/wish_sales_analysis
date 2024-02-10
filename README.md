@@ -201,20 +201,63 @@ ORDER BY
 
 <img width="700" alt="Screenshot 2567-01-28 at 11 09 48" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/31becc66-4c41-45c3-8226-1613893e4a90">
 
-From the first graph, "Product Color vs Unit Sold vs Avg. Rating":
+<br>From the first graph, "Product Color vs Unit Sold vs Avg. Rating":
 * Black products have the highest number of units sold, followed by white, blue, and green products.
 * The average rating (blue line) fluctuates around 4 out of 5 across different product colors, suggesting that customers are generally satisfied with their purchases irrespective of color.
 * The average rating does not appear to have a direct correlation with the number of units sold, as some less-sold colors still maintain a high rating.
+
 <br>In the second graph, "Product Color vs Units Sold vs Product Count":
 * Again, black products lead in product count, followed by white, blue, green and red products.
-<br>**Key insights:**
+
+<br><br>**Key insights:**
 * Black is the most popular product color in terms of sales, substantially outselling other colors. 
 * There is a consistent level of customer satisfaction across product colors, as indicated by the average rating. 
 * There is no direct correlation between units sold and customer rating.
 <br>**Strategic Implications:**
 * Interestingly, white and blue are the second most popular colors. If we can look at another dataset in different keywords (e.g., winter, spring, etc.), we might get a different color preference result. We can apply this data to how we advertise on the main page of the website to attract customer attention.
-### 4.2	Price Analysis
+
+### 4.2	Price Data Analysis
 #### 4.2.1 Average Units Sold and Ratings by Price Range Analysis
 The objective of "Average Units Sold and Ratings by Price Range Analysis" is to understand how pricing affects sales volume and customer satisfaction, which can help inform better pricing and marketing strategies.
 * Extracted all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’,’5-10’,’10-15’,’15-20’,’20-25’, and ’25-30’).
+```
+SELECT
+    CASE
+        WHEN price BETWEEN 0 AND 4.99 THEN '0-5'
+        WHEN price BETWEEN 5 AND 9.99 THEN '5-10'
+        WHEN price BETWEEN 10 AND 14.99 THEN '10-15'
+        WHEN price BETWEEN 15 AND 19.99 THEN '15-20'
+        WHEN price BETWEEN 20 AND 24.99 THEN '20-25'
+        WHEN price BETWEEN 25 AND 29.99 THEN '25-30'
+        ELSE '30+'
+    END AS price_range,
+    ROUND(AVG(units_sold), 2) AS avg_units_sold,
+    ROUND(AVG(rating), 2) AS avg_rating
+FROM project.wish_sales_datasets.summer_products_with_rating_and_performance
+GROUP BY price_range;
+```
+* Created a graph by using Tableau
+
+  <img width="400" alt="Screenshot 2567-01-28 at 11 58 15" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/4ca0eada-68b1-45ce-a2ed-60574b9b1338">
+
+What we can interpret from the graph:
+1. Average Units Sold:
+* Products within the 5-10 EUR price bracket show the highest average units sold, indicating strong consumer preference for items in this cost-effective range.
+* A marked decrease in average units sold is observed as we move to the 10-15 EUR range, continuing the downward trend for more expensive products.
+* Notably, products in the 25-30 EUR range and beyond exhibit significantly lower sales volumes, suggesting a diminished market for higher-priced items, possibly due to them being perceived as less value for money.
+2. Average Rating:
+* The average rating generally increases as the price range increases, with the highest average rating in the over 30 EUR price range.
+* This upward trend in ratings might imply greater customer satisfaction among higher-priced products. However, based on my observation, this assumption warrants skepticism. High ratings can often be associated with a low number of reviews, which may not accurately reflect broader consumer sentiment.
+* Sometimes ratings on e-commerce platforms may not always be wholly reliable. In some instances, particularly with merchants from certain regions like China, there is a tendency to inflate prices artificially, and the accompanying high ratings may be questionable, potentially stemming from dubious sources.
+<br><br>**Key Insights:**
+* The trend suggests that affordability drives sales, with products priced between 5-10 EUR being the most purchased. This could be attributed to a perceived sweet spot of price-to-value ratio that appeals to a broader consumer base.
+* A counterintuitive pattern emerges where higher-priced items, despite their lower sales figures, garner higher ratings. Caution is advised in interpreting this data as high ratings with a small review pool can be misleading and not necessarily indicative of superior quality.
+* High-value price tags accompanied by suspiciously high ratings could indicate a strategy where merchants set unrealistic retail prices to create a false perception of luxury or quality, which can influence customer ratings.
+<br><br>**Strategic Implications:**
+* This analysis could guide e-commerce platforms and merchants in establishing pricing strategies. For instance, it could be beneficial to highlight products in the 5-10 EUR range, where consumer purchase frequency is highest.
+* A critical examination of the relationship between price, sales volume, and ratings should inform marketing campaigns, emphasizing transparency and customer education to ensure that ratings reflect genuine customer experiences.
+* The platform might consider implementing measures to enhance the reliability of product ratings, such as verifying purchases or encouraging more comprehensive reviews, thereby aiding customers in making more informed decisions.
+<br><br>In summary, while there is valuable data to be gleaned from sales and rating trends across different price ranges, it's crucial to approach this information with a discerning eye, particularly when considering the impact of potential pricing strategies and the authenticity of customer reviews.
+
+
 
