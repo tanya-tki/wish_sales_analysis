@@ -18,7 +18,7 @@ The project follows these steps of data analysis process:
 
 ## 1.	Ask
 
-Our goal is to understand better what makes products on Wish do well. We're looking at things like how often products are bought, what ratings they get, and their prices. This helps us see what shoppers like and don't like.
+The objective of this project is to conduct a comprehensive analysis of sales data from the Wish platform to identify opportunities for optimizing sales performance. By leveraging data analytics techniques, we aim to gain actionable insights into customer behavior, product performance, pricing strategies, and marketing effectiveness.
 
 **Key questions guiding this analysis:**
 1.	Is there a link between how much people like a product (its ratings) and how well it sells?
