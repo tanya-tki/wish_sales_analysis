@@ -298,11 +298,12 @@ ORDER BY discount_percentage_range;
 ```
 
 The data below is the result of the sub-query. Interestingly, some products were set to sell higher at retail prices. Perhaps, some merchants are misunderstood? 
-<img width="1076" alt="Screenshot 2567-01-28 at 14 57 03" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/a22d0c78-33f2-4f37-b0e9-fb2a018c3afd">
+
+<img width="800" alt="Screenshot 2567-01-28 at 14 57 03" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/a22d0c78-33f2-4f37-b0e9-fb2a018c3afd">
 
 
 
-<img width="747" alt="Screenshot 2567-01-28 at 16 00 36" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/d0b34c1d-7bfe-4682-a7e3-7cd8d8111330">
+<img width="600" alt="Screenshot 2567-01-28 at 16 00 36" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/d0b34c1d-7bfe-4682-a7e3-7cd8d8111330">
 
 What we can interpret from the graph:
 1. Peak at No Discount and Deep Discounts: The graph shows high average units sold for products with no discount and for those with substantial discounts, particularly in the 30-40% range and more than 80% range.
