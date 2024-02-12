@@ -325,7 +325,7 @@ Price strategy: I would recommend the website to take a closer look at price.
 
 ## 5.	Act
 
-**Conclusion from Our Analysis:**
+### Conclusion from Our Analysis:
 
 The investigation into Wish's summer clothes sales data unveils crucial insights. 
 •	Black, white, blue, and green products had the highest sales, with black leading significantly.
@@ -333,7 +333,7 @@ The investigation into Wish's summer clothes sales data unveils crucial insights
 •	The 5-10 EUR price range saw the highest average units sold, indicating a consumer preference for moderately priced items.
 •	Higher-priced items (25-30 EUR and beyond) have lower sales volumes.
 
-**Recommendations for Wish:**
+### Recommendations for Wish:
 
 1. Product Assortment and Promotion: Given the strong preference for specific colors among consumers, We would advise Wish to enhance its promotional efforts by focusing on these preferred colors. This strategy can effectively leverage consumer tastes to boost the visibility and sales of these items, aligning marketing initiatives with established consumer preferences for better engagement and conversion rates.
 2. Pricing Strategy: Adjusting prices to fit the 5-10 EUR range could match Wish users' expectations for affordable shopping. By advising sellers to set their prices within this range, it's likely to attract more buyers, possibly increasing sales. This approach uses the platform's strength in offering cost-effective options to meet customer demands for reasonably priced items, aiming to boost sales.
@@ -348,7 +348,7 @@ To improve the rating system, consider these strategies:
 5. Marketing Adjustments: Tailor marketing campaigns to highlight the quality and affordability of products within the most popular price ranges and colors. Consider employing dynamic pricing strategies to adjust prices in real-time based on demand and inventory levels.
 6. Enhanced Data Analysis: Continue leveraging data analytics to refine pricing, marketing, and stock strategies. Further research into customer reviews and feedback could provide deeper insights into purchasing decisions and product satisfaction.
 
-**For future data analysis to enhance insights and strategic decisions at Wish, consider exploring:**
+### For future data analysis to enhance insights and strategic decisions at Wish:
 1. Customer Demographics: Analyze age, location, and interests to tailor marketing and product selections.
 2. Browsing Behaviors: Track time spent on the platform and pages visited to improve user experience and engagement.
 3. Cart Abandonment Rates: Investigate the reasons behind cart abandonment to address issues related to pricing or user interface.
