@@ -12,9 +12,8 @@ The project follows these steps of data analysis process:
  <br> [1. Ask](/README.md#1ask)
   <br>[2. Prepare](/README.md#2---prepare)
   <br>[3. Process](/README.md#3process)
- <br> [4. Analyze](/README.md#2---analyze)
-  <br>[5. Share](/README.md#2---prepare)
- <br> [6. Act](/README.md#2---prepare)
+ <br> [4. Analyze & Share](/README.md#2---analyze)
+ <br> [5. Act](/README.md#5act)
 
 ## 1.	Ask
 
