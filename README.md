@@ -1,8 +1,10 @@
 # Analysis of Wish's Summer Clothes Sales Performance
-By Tanyaluck Kanai
 
-<img src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/fcc8de94-bc86-454b-8c97-a3b44b2c5838" width="500">
+By: Tanyaluck Kanai
+<br> Date: 13 Feb 2024
 
+
+<img src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/fdc3edaf-a6f3-47be-822e-60b0323d46b1" width="400">
 
 
 
@@ -11,10 +13,14 @@ Welcome to my project, where we look closely at summer clothes products from Wis
 
 This project isn't just about Wish. I believe doing this project can help us learn a lot about online shopping in general especially in low-price focused websites. What we find out can help other online stores make better decisions and can teach us more about what people like to buy online.
 
-For this project, I will use SQL BigQuery and Excel to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
+For this project, SQL BigQuery and Excel will be used to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
 
-The project follows these steps of data analysis process:
- <br> [1. Ask](/README.md#1ask)
+One of the reason this project was developed is to showcase of my analytical and technical skills. It highlights my ability to derive actionable insights from complex datasets and propose strategic recommendations, reflecting my potential value to prospective employers in data analysis and business intelligence roles.
+
+If you have any questions or recommendations, please do not hesitate to DM me.
+
+## The project follows these steps of data analysis process:
+ [1. Ask](/README.md#1ask)
   <br>[2. Prepare](/README.md#2---prepare)
   <br>[3. Process](/README.md#3process)
  <br> [4. Analyze & Share](/README.md#4analyze-and-share)
@@ -25,18 +31,20 @@ The project follows these steps of data analysis process:
 The objective of this project is to conduct a comprehensive analysis of sales data from the Wish platform to identify opportunities for optimizing sales performance. By leveraging data analytics techniques, we aim to gain actionable insights into customer behavior, product performance, pricing strategies, and marketing effectiveness.
 
 **Key questions guiding this analysis:**
-1.	Is there a link between how much people like a product (its ratings) and how well it sells?
-2.	Whether prices and discounts affect how likely people are to buy something?
-3.	Which color of products are the most popular?
-4.	Do the seller's fame factor into top products?
-5.	Does the number of tags (making a product more discoverable) factor into the success of a product?
+1. Is there a link between how much people like a product (its ratings) and how well it sells?
+2. Whether prices and discounts affect how likely people are to buy something?
+3. Which color of products are the most popular?
+4. Do the seller's fame factor into top products?
+5. Does the number of tags (making a product more discoverable) factor into the success of a product?
 
 These questions aim to provide a comprehensive understanding of what drives customer choices on Wish, offering insights that could be beneficial for e-commerce strategies.
 
 ## 2.   Prepare
 
 ### 2.1 About Dataset
-The data we're using shows us a list of products that come up when you search for "summer" on Wish. The data was collected in early August 2020 and posted on the Kaggle website for education purposes. It includes information like how many people bought these products, their ratings, and prices, including discounts. This is just a small part of all the data Wish has, but it's still really useful.
+The data we're using shows us a list of products that come up when you search for "summer" on Wish. The data was collected in early August 2020 and posted on the [Kaggle](https://www.kaggle.com) for education purposes. It includes information like how many people bought these products, their ratings, and prices, including discounts. This is just a small part of all the data Wish has, but it's still really useful.
+
+[Click here to view the dataset on Kaggle](https://www.kaggle.com/datasets/jmmvutu/summer-products-and-sales-in-ecommerce-wish)
 
 ### 2.2 Data Organization 
 The data consists of 2 datasets. All the datasets are in .csv file format and include long and wide formats.
@@ -73,17 +81,17 @@ product_variation_size_id, product_variation_inventory, shipping_option_name, sh
 **summer_products_with_rating_and_performance dataset** has **36 columns** and **1,573 rows in total.**
 
 #### Strategic Analysis Planning: 
-Based on the dataset's structure and the information each column provides, I can plan out an analysis strategy. This will include deciding which columns are relevant to my questions and what kind of insights I can derive from them.
+Based on the dataset's structure and the information each column provides, our analysis strategy can be planed. This will include deciding which columns are relevant to our questions and what kind of insights we can derive from them.
 
-Below are some of the analysis ideas that I can think of after looking at the obtained column names and number of rows:
+Below are some of the analysis ideas that we can think of after looking at the obtained column names and number of rows:
 
  1.	Customer Preference Insights:
-*	Understand customer preferences based on product ratings (different rating counts) and the types of products sold (product_color, product_variation_size_id).
+* Understand customer preferences based on product ratings (different rating counts) and the types of products sold (product_color, product_variation_size_id).
  2.	Price Analysis:
-*	Evaluate how price affects units sold and ratings.
-*	Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
+* Evaluate how price affects units sold and ratings.
+* Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
  3.	Product Performance Analysis:
-*	Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
+* Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
 
 ### 3.3 Let’s clean the data
 3.3.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
@@ -184,10 +192,11 @@ Since UPDATE function cannot be used in BigQuery. I decided to correct data inco
 
 
 ## 4.	Analyze and Share
-In this project, I've chosen to combine the steps of analysis and sharing. This is because I think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
+In this project, we chose to combine the steps of analysis and sharing. This is because we think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
 ### 4.1 Customer Preference Data Analysis
-This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights. These are the steps of product color analysis: 
-4.1.1 Extracted all columns that will be used in product variation analysis by using SQL.
+This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights.
+<br>These are the steps we use to analyse product colours: 
+<br><br> 4.1.1 Extracted all columns that will be used in product variation analysis by using SQL.
 ```
 SELECT 
     product_color,
@@ -210,20 +219,21 @@ ORDER BY
 * The average rating (blue line) fluctuates around 4 out of 5 across different product colors, suggesting that customers are generally satisfied with their purchases irrespective of color.
 * The average rating does not appear to have a direct correlation with the number of units sold, as some less-sold colors still maintain a high rating.
 
-<br>In the second graph, "Product Color vs Units Sold vs Product Count":
+In the second graph, "Product Color vs Units Sold vs Product Count":
 * Again, black products lead in product count, followed by white, blue, green and red products.
 
-<br><br>**Key insights:**
+**Key insights:**
 * Black is the most popular product color in terms of sales, substantially outselling other colors. 
 * There is a consistent level of customer satisfaction across product colors, as indicated by the average rating. 
 * There is no direct correlation between units sold and customer rating.
-<br>**Strategic Implications:**
+  
+**Strategic Implications:**
 * Interestingly, white and blue are the second most popular colors. If we can look at another dataset in different keywords (e.g., winter, spring, etc.), we might get a different color preference result. We can apply this data to how we advertise on the main page of the website to attract customer attention.
 
 ### 4.2	Price Data Analysis
 #### 4.2.1 Average Units Sold and Ratings by Price Range Analysis
 The objective of "Average Units Sold and Ratings by Price Range Analysis" is to understand how pricing affects sales volume and customer satisfaction, which can help inform better pricing and marketing strategies.
-* Extracted all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’,’5-10’,’10-15’,’15-20’,’20-25’, and ’25-30’).
+* Extracted all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’, ’5-10’, ’10-15’, ’15-20’, ’20-25’, and ’25-30’).
 ```
 SELECT
     CASE
@@ -245,19 +255,23 @@ GROUP BY price_range;
   <img width="400" alt="Screenshot 2567-01-28 at 11 58 15" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/4ca0eada-68b1-45ce-a2ed-60574b9b1338">
 
 What we can interpret from the graph:
-1. Average Units Sold:
+
+**1. Average Units Sold:**
 * Products within the 5-10 EUR price bracket show the highest average units sold, indicating strong consumer preference for items in this cost-effective range.
 * A marked decrease in average units sold is observed as we move to the 10-15 EUR range, continuing the downward trend for more expensive products.
 * Notably, products in the 25-30 EUR range and beyond exhibit significantly lower sales volumes, suggesting a diminished market for higher-priced items, possibly due to them being perceived as less value for money.
-2. Average Rating:
+
+**2. Average Rating:**
 * The average rating generally increases as the price range increases, with the highest average rating in the over 30 EUR price range.
 * This upward trend in ratings might imply greater customer satisfaction among higher-priced products. However, based on my observation, this assumption warrants skepticism. High ratings can often be associated with a low number of reviews, which may not accurately reflect broader consumer sentiment.
 * Sometimes ratings on e-commerce platforms may not always be wholly reliable. In some instances, particularly with merchants from certain regions like China, there is a tendency to inflate prices artificially, and the accompanying high ratings may be questionable, potentially stemming from dubious sources.
-<br><br>**Key Insights:**
+  
+**Key Insights:**
 * The trend suggests that affordability drives sales, with products priced between 5-10 EUR being the most purchased. This could be attributed to a perceived sweet spot of price-to-value ratio that appeals to a broader consumer base.
 * A counterintuitive pattern emerges where higher-priced items, despite their lower sales figures, garner higher ratings. Caution is advised in interpreting this data as high ratings with a small review pool can be misleading and not necessarily indicative of superior quality.
 * High-value price tags accompanied by suspiciously high ratings could indicate a strategy where merchants set unrealistic retail prices to create a false perception of luxury or quality, which can influence customer ratings.
-<br><br>**Strategic Implications:**
+  
+**Strategic Implications:**
 * This analysis could guide e-commerce platforms and merchants in establishing pricing strategies. For instance, it could be beneficial to highlight products in the 5-10 EUR range, where consumer purchase frequency is highest.
 * A critical examination of the relationship between price, sales volume, and ratings should inform marketing campaigns, emphasizing transparency and customer education to ensure that ratings reflect genuine customer experiences.
 * The platform might consider implementing measures to enhance the reliability of product ratings, such as verifying purchases or encouraging more comprehensive reviews, thereby aiding customers in making more informed decisions.
@@ -313,10 +327,12 @@ What we can interpret from the graph:
 1. Peak at No Discount and Deep Discounts: The graph shows high average units sold for products with no discount and for those with substantial discounts, particularly in the 30-40% range and more than 80% range.
 2. Dip in Moderate Discounts: There's a noticeable dip in the average units sold for products with moderate discounts, especially in the 10-20% range.
 3. Rating Stability: The average rating line remains relatively stable across all discount ranges, suggesting that the level of discount does not significantly affect customer satisfaction as reflected in product ratings.
-Insights:
+   
+**Insights:**
 * Price Sensitivity Over Discount Sensitivity: The strong performance of non-discounted products suggests that consumers may be more sensitive to the absolute price rather than the discount itself. It's possible that products without discounts are already priced attractively enough to encourage purchases. This could be particularly true on a platform like Wish, where consumers are often looking for low-cost items.
 * Effect of Large Discounts: The substantial increase in units sold at higher discount brackets may be due to the psychological effect where customers perceive they are getting a significant deal, which could trigger a sense of urgency to purchase.
-Strategic Implications:
+
+**Strategic Implications:**
 * Targeted Discounting: Since moderate discounts don't significantly boost sales, it may be more strategic to offer significant discounts selectively, ensuring they align with inventory goals, such as stock clearance.
 * Profit Margin Balance: Given that deep discounts increase sales, it's important to balance these with profitability considerations to ensure overall business objectives are met.
 * Avoiding Overuse of Discounts: Frequent large discounts could potentially condition customers to wait for sales, which could hurt the perceived value of the products and impact regular-priced sales negatively.
