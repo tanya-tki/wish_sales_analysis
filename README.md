@@ -63,7 +63,7 @@ There is no explicit indication of the source or method of data collection for t
 
 ### 3.1 Import CSV Files into a SQL Database
 ### 3.2 Initial Data Overview
-#### Column Names and Row Count: 
+**Column Names and Row Count:**
 Begin by identifying the column names and the total number of rows in the dataset. This initial step is essential for understanding the scope and scale of the data.
 
 ```
@@ -80,7 +80,7 @@ product_variation_size_id, product_variation_inventory, shipping_option_name, sh
 ```
 **summer_products_with_rating_and_performance dataset** has **36 columns** and **1,573 rows in total.**
 
-#### Strategic Analysis Planning: 
+**Strategic Analysis Planning:**
 Based on the dataset's structure and the information each column provides, our analysis strategy can be planed. This will include deciding which columns are relevant to our questions and what kind of insights we can derive from them.
 
 Below are some of the analysis ideas that we can think of after looking at the obtained column names and number of rows:
