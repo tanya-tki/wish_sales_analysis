@@ -1,6 +1,11 @@
 # Analysis of Wish's Summer Clothes Sales Performance
 By Tanyaluck Kanai
 
+<img src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/fcc8de94-bc86-454b-8c97-a3b44b2c5838" width="500">
+
+
+
+
 ## Introduction
 Welcome to my project, where we look closely at summer clothes products from Wish, a popular online shopping site. Wish is where you can find almost anything at a good price. The way Wish shows shoppers different products is interesting, and that's why we're looking at their data.
 
@@ -315,38 +320,32 @@ Strategic Implications:
 * Targeted Discounting: Since moderate discounts don't significantly boost sales, it may be more strategic to offer significant discounts selectively, ensuring they align with inventory goals, such as stock clearance.
 * Profit Margin Balance: Given that deep discounts increase sales, it's important to balance these with profitability considerations to ensure overall business objectives are met.
 * Avoiding Overuse of Discounts: Frequent large discounts could potentially condition customers to wait for sales, which could hurt the perceived value of the products and impact regular-priced sales negatively.
-<br>
-1.	Customer Segmentation: Segment customers based on their sensitivity to price versus discounts. Tailor the shopping experience to these segments, showing the most price-sensitive customers the lowest-priced items and discount-seekers the best deals.
-Price strategy: I would recommend the website to take a closer look at price.
-1.	Pricing Analysis: Wish could conduct a thorough analysis of the absolute prices of products that sell well without discounts. Understanding this could inform pricing strategies that align with customer expectations and willingness to pay.
-2.	Dynamic Pricing Models: Implement dynamic pricing models that respond to real-time demand and inventory levels. By optimizing prices based on consumer behavior data, Wish can maximize profits while maintaining competitive prices.
-3.	Discount Optimization: Instead of across-the-board discounts, Wish might find it more beneficial to offer targeted discounts on specific products that don't sell as well at their original price point, potentially clearing inventory without eroding the perceived value of their overall product line.
-4.	Marketing Focus on Price: Marketing campaigns could focus on the competitive pricing of products, highlighting value for money and affordability as key selling points, rather than emphasizing discounts.
 
 ## 5.	Act
 
 ### Conclusion from Our Analysis:
 
 The investigation into Wish's summer clothes sales data unveils crucial insights. 
-•	Black, white, blue, and green products had the highest sales, with black leading significantly.
-•	No direct correlation found between product ratings and sales volume.
-•	The 5-10 EUR price range saw the highest average units sold, indicating a consumer preference for moderately priced items.
-•	Higher-priced items (25-30 EUR and beyond) have lower sales volumes.
+* Black, white, blue, and green products had the highest sales, with black leading significantly.
+* No direct correlation found between product ratings and sales volume.
+* The 5-10 EUR price range saw the highest average units sold, indicating a consumer preference for moderately priced items.
+* Higher-priced items (25-30 EUR and beyond) have lower sales volumes.
 
 ### Recommendations for Wish:
 
 1. Product Assortment and Promotion: Given the strong preference for specific colors among consumers, We would advise Wish to enhance its promotional efforts by focusing on these preferred colors. This strategy can effectively leverage consumer tastes to boost the visibility and sales of these items, aligning marketing initiatives with established consumer preferences for better engagement and conversion rates.
 2. Pricing Strategy: Adjusting prices to fit the 5-10 EUR range could match Wish users' expectations for affordable shopping. By advising sellers to set their prices within this range, it's likely to attract more buyers, possibly increasing sales. This approach uses the platform's strength in offering cost-effective options to meet customer demands for reasonably priced items, aiming to boost sales.
-3. Enhanced Rating System: Improving the rating system could give customers better information since our analysis found no link between ratings and sales. A stronger system could make ratings more trustworthy, possibly helping customers make better buying choices.
-<br>To improve the rating system, consider these strategies:
+3. Customer Segmentation: Segment customers based on their sensitivity to price versus discounts. Tailor the shopping experience to these segments, showing the most price-sensitive customers the lowest-priced items and discount-seekers the best deals.
+4. Enhanced Rating System: Improving the rating system could give customers better information since our analysis found no link between ratings and sales. A stronger system could make ratings more trustworthy, possibly helping customers make better buying choices.
+To improve the rating system, consider these strategies:
 * Verification of Purchases: Only allow ratings from verified purchasers to ensure authenticity.
 * In-depth Review Options: Include options for detailed feedback, like product quality and delivery experience, to provide more comprehensive insights.
 * Rating Moderation: Implement a system to flag and review suspicious or abusive ratings.
 * Incentives for Reviews: Encourage honest reviews by offering incentives, ensuring a broader range of customer feedback.
 * User Interface for Ratings: Make leaving reviews easy and intuitive, possibly impacting the quantity and quality of feedback received.
-4. Marketing and Consumer Education: Focusing marketing efforts on the value and quality of products within the preferred price range and colors could enhance customer engagement and sales.
-5. Marketing Adjustments: Tailor marketing campaigns to highlight the quality and affordability of products within the most popular price ranges and colors. Consider employing dynamic pricing strategies to adjust prices in real-time based on demand and inventory levels.
+5. Marketing Adjustments: Tailor marketing campaigns to highlight the quality and affordability of products within the most popular price ranges and colors. Consider employing dynamic pricing strategies to adjust prices in real-time based on demand levels.
 6. Enhanced Data Analysis: Continue leveraging data analytics to refine pricing, marketing, and stock strategies. Further research into customer reviews and feedback could provide deeper insights into purchasing decisions and product satisfaction.
+
 
 ### For future data analysis to enhance insights and strategic decisions at Wish:
 1. Customer Demographics: Analyze age, location, and interests to tailor marketing and product selections.
