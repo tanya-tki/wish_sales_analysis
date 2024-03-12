@@ -220,6 +220,8 @@ ORDER BY
 * The average rating (blue line) fluctuates around 4 out of 5 across different product colors, suggesting that customers are generally satisfied with their purchases irrespective of color.
 * The average rating does not appear to have a direct correlation with the number of units sold, as some less-sold colors still maintain a high rating.
 
+<img width="484" alt="Screenshot 2567-03-12 at 14 50 40" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/275c1ce2-14e0-4dda-a2c3-f2867ca7d112">
+
 In the second graph, "Product Color vs Units Sold vs Product Count":
 * Again, black products lead in product count, followed by white, blue, green and red products.
 
@@ -253,7 +255,8 @@ GROUP BY price_range;
 ```
 * Created a graph by using Tableau
 
-  <img width="400" alt="Screenshot 2567-01-28 at 11 58 15" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/4ca0eada-68b1-45ce-a2ed-60574b9b1338">
+<img width="536" alt="Screenshot 2567-03-12 at 15 02 20" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/e5b43717-8acd-4ea1-94f2-c56de346daea">
+
 
 What we can interpret from the graph:
 
@@ -320,9 +323,9 @@ The data below is the result of the sub-query. Interestingly, some products were
 
 <img width="800" alt="Screenshot 2567-01-28 at 14 57 03" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/a22d0c78-33f2-4f37-b0e9-fb2a018c3afd">
 
+<img width="538" alt="Screenshot 2567-03-12 at 15 03 18" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/211a21d3-45d6-48f7-b1fb-60226d849384">
 
 
-<img width="500" alt="Screenshot 2567-01-28 at 16 00 36" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/d0b34c1d-7bfe-4682-a7e3-7cd8d8111330">
 
 What we can interpret from the graph:
 1. Peak at No Discount and Deep Discounts: The graph shows high average units sold for products with no discount and for those with substantial discounts, particularly in the 30-40% range and more than 80% range.
