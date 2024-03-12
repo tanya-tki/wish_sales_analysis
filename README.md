@@ -212,7 +212,8 @@ ORDER BY
 ```
 4.2.2 Created a graph by using Tableau to see if there are any correlations between product color, unit sold and average rating.
 
-<img width="700" alt="Screenshot 2567-01-28 at 11 09 48" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/31becc66-4c41-45c3-8226-1613893e4a90">
+<img width="800" alt="Screenshot 2567-03-12 at 14 48 35" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/e657a671-2b6e-4bf4-8e6e-72c1aaf3a11c">
+
 
 <br>From the first graph, "Product Color vs Unit Sold vs Avg. Rating":
 * Black products have the highest number of units sold, followed by white, blue, and green products.
