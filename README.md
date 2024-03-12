@@ -3,6 +3,8 @@
 By: Tanyaluck Kanai
 <br> Date: 13 Feb 2024
 
+[Wish Summer Clothings Sales Analysis Story Dashboard - Tableau](https://public.tableau.com/app/profile/tanyaluck.kanai/viz/WishSummerSalesAnalysis/WishSalesAnalysis?publish=yes)
+
 
 <img src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/fdc3edaf-a6f3-47be-822e-60b0323d46b1" width="400">
 
