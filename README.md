@@ -12,9 +12,9 @@ By: Tanyaluck Kanai
 
 
 ## Introduction
-Welcome to my project, where we look closely at summer clothes products from Wish, a popular online shopping site. Wish is where you can find almost anything at a good price. The way Wish shows shoppers different products is interesting, and that's why we're looking at their data.
+Welcome to my project, where we look closely at summer clothes products from Wish, a popular online shopping site. Wish is where you can find almost anything at a good price.
 
-This project isn't just about Wish. I believe doing this project can help us learn a lot about online shopping in general especially in low-price focused websites. What we find out can help other online stores make better decisions and can teach us more about what people like to buy online.
+This project isn't just about Wish. I believe doing this project can help us learn a lot about online shopping in general especially in low-price focused e-commerce. What we find out can help other online stores make better decisions and can teach us more about what people like to buy online.
 
 For this project, SQL BigQuery and Excel will be used to organize the data and make sense of it, and Tableau to create visuals. This will help us see the patterns and trends in the data more clearly.
 
