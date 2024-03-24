@@ -233,7 +233,7 @@ In the second graph suggests a visual representation of the most common product 
 ### 4.2	Price Data Analysis
 #### 4.2.1 Average Units Sold and Ratings by Price Range Analysis
 The objective of "Average Units Sold and Ratings by Price Range Analysis" is to understand how pricing affects sales volume and customer satisfaction, which can help inform better pricing and marketing strategies.
-* Extracted all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’, ’5-10’, ’10-15’, ’15-20’, ’20-25’, and ’25-30’).
+* Extract all columns that will be used in product variation analysis by using SQL. I grouped prices into 7 price ranges (‘0-5’, ’5-10’, ’10-15’, ’15-20’, ’20-25’, and ’25-30’).
 ```
 SELECT
     CASE
@@ -250,7 +250,7 @@ SELECT
 FROM project.wish_sales_datasets.summer_products_with_rating_and_performance
 GROUP BY price_range;
 ```
-* Created a graph by using Tableau
+* Create a graph by using Tableau
 
 <img width="536" alt="Screenshot 2567-03-12 at 15 02 20" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/e5b43717-8acd-4ea1-94f2-c56de346daea">
 
@@ -260,29 +260,27 @@ What we can interpret from the graph:
 **1. Average Units Sold:**
 * Products within the 5-10 EUR price bracket show the highest average units sold, indicating strong consumer preference for items in this cost-effective range.
 * A marked decrease in average units sold is observed as we move to the 10-15 EUR range, continuing the downward trend for more expensive products.
-* Notably, products in the 25-30 EUR range and beyond exhibit significantly lower sales volumes, suggesting a diminished market for higher-priced items, possibly due to them being perceived as less value for money.
+* Notably, products in the 25-30 EUR range and beyond exhibit significantly lower sales volumes, suggesting a diminished market for higher-priced items.
 
 **2. Average Rating:**
 * The average rating generally increases as the price range increases, with the highest average rating in the over 30 EUR price range.
-* This upward trend in ratings might imply greater customer satisfaction among higher-priced products. However, based on my observation, this assumption warrants skepticism. High ratings can often be associated with a low number of reviews, which may not accurately reflect broader consumer sentiment.
-* Sometimes ratings on e-commerce platforms may not always be wholly reliable. In some instances, particularly with merchants from certain regions like China, there is a tendency to inflate prices artificially, and the accompanying high ratings may be questionable, potentially stemming from dubious sources.
+* This upward trend in ratings might imply greater customer satisfaction among higher-priced products. 
   
 **Key Insights:**
 * The trend suggests that affordability drives sales, with products priced between 5-10 EUR being the most purchased. This could be attributed to a perceived sweet spot of price-to-value ratio that appeals to a broader consumer base.
-* A counterintuitive pattern emerges where higher-priced items, despite their lower sales figures, garner higher ratings. Caution is advised in interpreting this data as high ratings with a small review pool can be misleading and not necessarily indicative of superior quality.
-* High-value price tags accompanied by suspiciously high ratings could indicate a strategy where merchants set unrealistic retail prices to create a false perception of luxury or quality, which can influence customer ratings.
-  
+* A surprising trend shows that more expensive items get better ratings despite selling less. However, based on my observation, this assumption warrants skepticism. High ratings can often be associated with a low number of reviews, which may not accurately reflect broader consumer sentiment.
+
 **Strategic Implications:**
 * This analysis could guide e-commerce platforms and merchants in establishing pricing strategies. For instance, it could be beneficial to highlight products in the 5-10 EUR range, where consumer purchase frequency is highest.
-* A critical examination of the relationship between price, sales volume, and ratings should inform marketing campaigns, emphasizing transparency and customer education to ensure that ratings reflect genuine customer experiences.
 * The platform might consider implementing measures to enhance the reliability of product ratings, such as verifying purchases or encouraging more comprehensive reviews, thereby aiding customers in making more informed decisions.
-<br><br>In summary, while there is valuable data to be gleaned from sales and rating trends across different price ranges, it's crucial to approach this information with a discerning eye, particularly when considering the impact of potential pricing strategies and the authenticity of customer reviews.
 
 #### 4.2.2	Discount Sensitivity and Sales Impact Analysis
 The objective of this analysis is to understand consumer sensitivity to price drops by analyzing how discounted prices affect units sold and product ratings.
-* Calculated the discount percentage for each product using the formula:
+* Calculate the discount percentage for each product using the formula:
 (retail_price−price)/retail_price
-* Divided the data into segments based on the discount percentage. I decided to 10 percentage increment brackets like 0-10%, 11-20%, and so on.
+<br> Note: retail_price is a price before discount.
+	price is a price after discount.
+* Divide the data into segments based on the discount percentage. We divide into 10 percentage increment brackets like 0-10%, 11-20%, and so on.
 * For each discount segment, calculate the average units sold and the average rating.
 
 ```
