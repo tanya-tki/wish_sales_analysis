@@ -4,6 +4,7 @@ By: Tanyaluck Kanai
 <br>Project Status: Done
 <br> Date: 13 Feb 2024
 
+For 
 [Wish Summer Clothings Sales Analysis Story Dashboard - Tableau](https://public.tableau.com/app/profile/tanyaluck.kanai/viz/WishSummerSalesAnalysis/WishSalesAnalysis?publish=yes)
 
 
@@ -31,14 +32,12 @@ If you have any questions or recommendations, please do not hesitate to DM me.
 
 ## 1.	Ask
 
-The objective of this project is to conduct a comprehensive analysis of sales data from the Wish platform to identify opportunities for optimizing sales performance. By leveraging data analytics techniques, we aim to gain actionable insights into customer behavior, product performance, pricing strategies, and marketing effectiveness.
+The objective of this project is to conduct a comprehensive analysis of sales data from the Wish platform in clothing category to identify opportunities for marketing strategies. By leveraging data analytics techniques, we aim to gain actionable insights into customer behavior, product performance and pricing strategies.
 
 **Key questions guiding this analysis:**
 1. Is there a link between how much people like a product (its ratings) and how well it sells?
 2. Whether prices and discounts affect how likely people are to buy something?
 3. Which color of products are the most popular?
-4. Do the seller's fame factor into top products?
-5. Does the number of tags (making a product more discoverable) factor into the success of a product?
 
 These questions aim to provide a comprehensive understanding of what drives customer choices on Wish, offering insights that could be beneficial for e-commerce strategies.
 
@@ -50,9 +49,10 @@ The data we're using shows us a list of products that come up when you search fo
 [Click here to view the dataset on Kaggle](https://www.kaggle.com/datasets/jmmvutu/summer-products-and-sales-in-ecommerce-wish)
 
 ### 2.2 Data Organization 
-The data consists of 2 datasets. All the datasets are in .csv file format and include long and wide formats.
+The data consists of 2 datasets. All the datasets are in .csv file format and include long and wide formats. 
   *	computed_insight_success_of_active_sellers
   *	summer_products_with_rating_and_performance
+For this project, we'll use *summer_products_with_rating_and_performance* dataset.
 
 ### 2.3 Data Limitations & Integrity 
 #### 2.3.1 	Outdated Data
