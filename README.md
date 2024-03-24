@@ -58,7 +58,7 @@ For this project, we'll use *summer_products_with_rating_and_performance* datase
 #### 2.3.1 	Outdated Data
 The summer clothes sales data was collected in August 2018 making the datasets outdated for current trend analysis. 
 #### 2.3.2 	The Sample Size
-The summer_products_with_rating_and_performance.csv dataset might not represent the entire range of summer products available in the market. 
+The dataset might not represent the entire range of summer products available in the market. 
 #### 2.3.3 	Accuracy and Reliability
 There is no explicit indication of the source or method of data collection for these datasets, which raises questions about their accuracy and reliability. Any errors in data collection or recording would directly impact the analysis.
 
