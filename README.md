@@ -111,10 +111,7 @@ COUNT(CASE WHEN title_orig IS NULL THEN 1 END) AS title_orig_nulls,
   	COUNT(CASE WHEN crawl_month IS NULL THEN 1 END) AS crawl_month_nulls
 FROM project.wish_sales_datasets.summer_product_rating_and_performance
 ```
-Note: If we use Python, the code will be much shorter. We can write a Python code as below:
-```
-null_counts_tablename = df_tablename.isnull().sum()
-```
+
 There are results I found from checking NULL values:
 ```
 title_orig_nulls	    0
@@ -163,8 +160,8 @@ What can we interpret from these data:
 *	has_urgency_banner and urgency_text columns have 1100 nulls, indicating that most products in the dataset do not have an urgency banner. I will replace the null values with zeros.
 *	merchant_profile_picture has 1138 nulls, suggesting that for many merchants, the profile picture data is missing.
 
-3.3.3	Replaced NULL values with zero
-Since the free trial version of Bigquery doesn’t allow SET and UPDATE functions which can modify the data directly, I had to find another way by creating a new table instead.
+3.4.3	Replaced NULL values with zero
+Since the free trial version of Bigquery doesn’t allow SET and UPDATE functions which can modify the data directly, we have to find another way by creating a new table instead.
 ```
 CREATE TABLE project.wish_sales_datasets.summer_product_rating_and_performance01 AS 
 SELECT 
@@ -185,9 +182,9 @@ SELECT
   crawl_month  
 FROM project.wish_sales_datasets.summer_product_rating_and_performance;
 ```
-3.3.4	Checked for data inconsistency in product_color and product_variation_size_id
+3.4.4	Check for data inconsistency in product_color and product_variation_size_id
 *	Run a query to list all distinct values in the product_color and product_variation_size_id columns. 
-Since UPDATE function cannot be used in BigQuery. I decided to correct data inconsistency in Excel.
+Since UPDATE function cannot be used in BigQuery. We correct data inconsistency in Excel.
 *	Convert all text to lowercase.
 *	Map similar colors to a standard color name (e.g., "light blue" "navy blue" “lake blue” “sky blue” to "blue"). Map the same category size description into the same group (e.g., “SIZE S” to “s”)
 
@@ -196,8 +193,7 @@ Since UPDATE function cannot be used in BigQuery. I decided to correct data inco
 In this project, we chose to combine the steps of analysis and sharing. This is because we think it will be simpler for people to understand the insights and findings if they see the analysis process that led to them. By doing this, we can speed up decision-making in practice, as we share discoveries in real-time rather than waiting until all the analysis is complete.
 ### 4.1 Customer Preference Data Analysis
 This data analysis focuses on the impact of product_color on units sold (units_sold) and customer ratings (rating) to gain customer preference Insights.
-<br>These are the steps we use to analyse product colours: 
-<br><br> 4.1.1 Extracted all columns that will be used in product variation analysis by using SQL.
+<br><br> 4.1.1 Extract all columns that will be used in product variation analysis by using SQL.
 ```
 SELECT 
     product_color,
@@ -211,20 +207,20 @@ GROUP BY
 ORDER BY 
     units_sold DESC, average_rating DESC;
 ```
-4.2.2 Created a graph by using Tableau to see if there are any correlations between product color, unit sold and average rating.
+4.2.2 Create a graph by using Tableau to see if there are any correlations between product color, unit sold and average rating.
 
 <img width="800" alt="Screenshot 2567-03-12 at 14 48 35" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/e657a671-2b6e-4bf4-8e6e-72c1aaf3a11c">
 
 
-<br>From the first graph, "Product Color vs Unit Sold vs Avg. Rating":
+<br>From the graph:
 * Black products have the highest number of units sold, followed by white, blue, and green products.
 * The average rating (blue line) fluctuates around 4 out of 5 across different product colors, suggesting that customers are generally satisfied with their purchases irrespective of color.
 * The average rating does not appear to have a direct correlation with the number of units sold, as some less-sold colors still maintain a high rating.
 
 <img width="484" alt="Screenshot 2567-03-12 at 14 50 40" src="https://github.com/tanya-tki/wish_sales_analysis/assets/153815515/275c1ce2-14e0-4dda-a2c3-f2867ca7d112">
 
-In the second graph, "Product Color vs Units Sold vs Product Count":
-* Again, black products lead in product count, followed by white, blue, green and red products.
+In the second graph suggests a visual representation of the most common product colors available on the platform, ranked by how many products are available in each color:
+* Again, black products lead in product count, followed by white, blue, red and red products, reflecting that merchants also stock preferebly these colors.
 
 **Key insights:**
 * Black is the most popular product color in terms of sales, substantially outselling other colors. 
