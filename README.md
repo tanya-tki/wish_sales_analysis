@@ -83,8 +83,8 @@ product_variation_size_id, product_variation_inventory, shipping_option_name, sh
 ```
 **summer_products_with_rating_and_performance dataset** has **36 columns** and **1,573 rows in total.**
 
-**Strategic Analysis Planning:**
-Based on the dataset's structure and the information each column provides, our analysis strategy can be planed. This will include deciding which columns are relevant to our questions and what kind of insights we can derive from them.
+### 3.3 Plan Analysis Strategy
+Based on the dataset structure and the information each column provides, our analysis strategy can be planed. This will include deciding which columns are relevant to our questions and what kind of insights we can derive from them.
 
 Below are some of the analysis ideas that we can think of after looking at the obtained column names and number of rows:
 
@@ -93,15 +93,13 @@ Below are some of the analysis ideas that we can think of after looking at the o
  2.	Price Analysis:
 * Evaluate how price affects units sold and ratings.
 * Study the effect of using ad boosts (uses_ad_boosts) on product sales and ratings.
- 3.	Product Performance Analysis:
-* Examine which products perform best in terms of units sold (units_sold) and customer ratings (rating).
 
-### 3.3 Let’s clean the data
-3.3.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
+### 3.4 Let’s clean the data
+3.4.1 Remove duplicate data by using the DISTINCT (*) and create new tables that have no duplication. We will use these new tables in further analysis.
 * summer_products_with_rating_and_performance dataset has 34 duplicate values and has been removed; 1539 unique values remain. 
 * product_id column found 198 duplicate values and has been removed; 1,341 unique values remain in total.
 
-3.3.2	Check for ‘NULL’ value in all datasets.
+3.4.2	Check for ‘NULL’ value in all datasets.
 ```
 SELECT 
 COUNT(CASE WHEN title_orig IS NULL THEN 1 END) AS title_orig_nulls,
