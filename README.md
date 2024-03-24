@@ -4,7 +4,7 @@ By: Tanyaluck Kanai
 <br>Project Status: Done
 <br> Date: 13 Feb 2024
 
-For 
+For a quick understanding of our analysis and to see the story our data tells, please visit our Tableau story here: Link to
 [Wish Summer Clothings Sales Analysis Story Dashboard - Tableau](https://public.tableau.com/app/profile/tanyaluck.kanai/viz/WishSummerSalesAnalysis/WishSalesAnalysis?publish=yes)
 
 
