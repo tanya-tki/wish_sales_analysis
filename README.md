@@ -1,7 +1,7 @@
 # Analysis of Wish's Summer Clothes Sales Performance
 
 By: Tanyaluck Kanai
-<br>Project Status: Done
+<br>Project Status: Completed
 <br> Date: 13 Feb 2024
 
 For a quick understanding of our analysis and to see the story our data tells, please visit our Tableau story here: Link to
